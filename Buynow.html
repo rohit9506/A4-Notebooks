@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      background-image: url("Images/background imag.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .Links {
+      text-align: center;
+      background-color: rgba(209, 139, 90, 0.95);
+      padding: 14px 0;
+    }
+
+    .Links a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .Links a:hover {
+      color: #E8F041;
+    }
+
+    .header {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .color {
+      color: #1F4E79;
+      font-size: 36px;
+    }
+
+    .tab1 {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 500px;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+    }
+
+    caption {
+      padding: 15px;
+      font-size: 26px;
+      color: #1F4E79;
+    }
+
+    th {
+      background-color: #999999;
+      padding: 12px;
+    }
+
+    td {
+      text-align: center;
+      padding: 12px;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f2f2f2;
+    }
+
+    .new1 {
+      background-color: #37CC44;
+      font-weight: 600;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #1F4E79;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      background-color: rgba(209, 139, 90, 0.95);
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+	/* Pay Now Button Container */
+.pay-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Pay Now Button – Theme Matched */
+.pay-container button {
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #9acd32, #6b8e23); /* theme green */
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.pay-container button:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="Links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+<div class="header">
+  <h1 class="color">A4 Notebooks</h1>
+</div>
+
+<div class="tab1">
+  <table>
+    <caption>Your Invoice</caption>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Checkout</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Books</td>
+      <td id="Num"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Delivery Charges</td>
+      <td id="delivery"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Tax</td>
+      <td id="tax"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="new1">Total Price</td>
+      <td id="sum"></td>
+    </tr>
+  </table>
+</div>
+
+<div class="pay-container">
+  <button onclick="goToPayment()">Pay Now</button>
+</div>
+
+<script>
+  var price = 50;
+  var delivery = 50.00;
+  var tax = 13.40;
+  var qty, sum;
+
+  document.getElementById("delivery").innerHTML = delivery.toFixed(2);
+  document.getElementById("tax").innerHTML = tax.toFixed(2);
+
+  qty = parseInt(prompt("Enter the Quantity of books"));
+
+  if (isNaN(qty) || qty <= 0) {
+    alert("Invalid Quantity!");
+  } else {
+    document.getElementById("Num").innerHTML = qty;
+    sum = qty * price + delivery + tax;
+    document.getElementById("sum").innerHTML = sum.toFixed(2);
+  }
+
+  function goToPayment() {
+    window.location.href = "upi.html?amount=" + sum.toFixed(2);
+  }
+</script>
+
+<footer>
+  &copy; 2025 Notebooks Store
+</footer>
+
+</body>
+</html>

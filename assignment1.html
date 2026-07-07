@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Now</title>
+
+  <style>
+    /* =========================
+       Global Style
+    ========================= */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7fa;
+    }
+
+    /* =========================
+       Navigation
+    ========================= */
+    .Links {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 14px;
+    }
+
+    .Links a {
+      margin: 0 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .Links a:hover {
+      color: #E8F041;
+    }
+
+    /* =========================
+       Product Card
+    ========================= */
+    .product-card {
+      max-width: 420px;
+      margin: 60px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* =========================
+       Image + Hover Overlay
+    ========================= */
+    .image-wrapper {
+      position: relative;
+      width: 220px;
+      margin: auto;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+.image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+}
+
+
+    .hover-details {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.25)
+      );
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.35s ease;
+      border-radius: 18px;
+    }
+
+    /* Hover Effects */
+    .image-wrapper:hover img {
+      transform: scale(1.08);
+    }
+
+    .image-wrapper:hover .hover-details {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       Text & Button
+    ========================= */
+    .title {
+      margin: 25px 0 10px;
+      color: #1F4E79;
+      font-size: 28px;
+    }
+
+    .price {
+      color: #6A5ACD;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 12px 40px;
+      background: linear-gradient(135deg, #9acd32, #6b8e23);
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+    }
+
+    /* =========================
+       Footer
+    ========================= */
+    footer {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 12px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+/* =========================
+   Page Background Image
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+
+  /* Apply the generated background image */
+  background-image: url("Images/background imag.png"); /* <-- update path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Header & Footer clean look */
+.Links,
+footer {
+  background-color: rgba(209, 139, 90, 0.95); /* soft brown */
+  backdrop-filter: blur(2px);
+}
+/* Content containers */
+.product-card,
+.about-container,
+figure,
+.notebook-card {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div class="Links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <!-- Product Card -->
+  <div class="product-card">
+
+    <div class="image-wrapper">
+      <img src="Images/1book.jpg" alt="A4 Notebook">
+
+      <div class="hover-details">
+        Premium A4 notebook with smooth paper, durable cover,
+        perfect for students and professionals.
+      </div>
+    </div>
+
+    <h1 class="title">A4 Notebook</h1>
+    <div class="price">₹50</div>
+
+    <a href="Buynow.html" class="buy-btn">Buy Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Notebooks Store
+  </footer>
+
+</body>
+</html>

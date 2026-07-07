@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+
+  <style>
+    /* =========================
+       Global
+    ========================= */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7fa;
+    }
+
+    /* =========================
+       REFERENCE HEADER (SAME AS HOME)
+    ========================= */
+    .Links {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 14px 0;
+    }
+
+    .Links a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .Links a:hover {
+      color: #E8F041;
+    }
+
+    /* =========================
+       Payment Layout
+    ========================= */
+    .page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 30px;
+      width: 360px;
+      border-radius: 14px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* =========================
+       Inputs
+    ========================= */
+    .box input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* =========================
+       Buttons
+    ========================= */
+    .box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    /* UPI & Card buttons (BLUE) */
+    .method-btn {
+      background: linear-gradient(135deg, #1F4E79, #163a59);
+      color: #ffffff;
+    }
+
+    .method-btn:hover {
+      background: linear-gradient(135deg, #163a59, #0f2a42);
+    }
+
+    /* Final Pay button (GREEN) */
+    .pay-btn {
+      background: linear-gradient(135deg, #9acd32, #6b8e23);
+      color: #000;
+    }
+
+    .pay-btn:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    #upiBox,
+    #cardBox {
+      display: none;
+      margin-top: 10px;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       REFERENCE FOOTER (SAME AS HOME)
+    ========================= */
+    footer {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+	
+/* =========================
+   Page Background Image
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+
+  /* Apply the generated background image */
+  background-image: url("Images/background imag.png"); /* <-- update path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Header & Footer clean look */
+.Links,
+footer {
+  background-color: rgba(209, 139, 90, 0.95); /* soft brown */
+  backdrop-filter: blur(2px);
+}
+/* Content containers */
+.product-card,
+.about-container,
+figure,
+.notebook-card {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="Links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Payment Box -->
+  <div class="page">
+    <div class="box">
+      <h2>Payment</h2>
+      <p>Total Amount: ₹<span id="amount"></span></p>
+
+      <button class="method-btn" onclick="showUPI()">Pay via UPI</button>
+      <button class="method-btn" onclick="showCard()">Pay via Card</button>
+
+      <div id="upiBox">
+        <input type="text" id="upiId" placeholder="example@upi">
+        <button class="pay-btn" onclick="payUPI()">Pay</button>
+      </div>
+
+      <div id="cardBox">
+        <input type="text" id="cardNo" placeholder="Card Number">
+        <input type="text" id="expiry" placeholder="MM/YY">
+        <input type="password" id="cvv" placeholder="CVV">
+        <button class="pay-btn" onclick="payCard()">Pay</button>
+      </div>
+
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Notebooks Store
+  </footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const amount = params.get("amount");
+  document.getElementById("amount").innerText = amount;
+
+  function showUPI() {
+    document.getElementById("upiBox").style.display = "block";
+    document.getElementById("cardBox").style.display = "none";
+  }
+
+  function showCard() {
+    document.getElementById("cardBox").style.display = "block";
+    document.getElementById("upiBox").style.display = "none";
+  }
+
+  function payUPI() {
+    let upi = document.getElementById("upiId").value;
+    if (!upi.includes("@")) {
+      document.getElementById("result").innerText = "❌ Invalid UPI ID";
+      return;
+    }
+    document.getElementById("result").innerText =
+      "✅ UPI Payment Successful | Amount Paid ₹" + amount;
+  }
+
+  function payCard() {
+    let card = document.getElementById("cardNo").value;
+    let cvv = document.getElementById("cvv").value;
+
+    if (card.length !== 16 || cvv.length !== 3) {
+      document.getElementById("result").innerText = "❌ Invalid Card Details";
+      return;
+    }
+
+    document.getElementById("result").innerText =
+      "✅ Card Payment Successful | Amount Paid ₹" + amount;
+  }
+</script>
+
+</body>
+</html>

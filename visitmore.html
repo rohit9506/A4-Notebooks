@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebook Collection</title>
+
+  <style>
+    /* =========================
+       Global
+    ========================= */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("Images/background imag.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* =========================
+       Header (REFERENCE)
+    ========================= */
+    .Links {
+      text-align: center;
+      background-color: rgba(209, 139, 90, 0.95);
+      padding: 14px 0;
+    }
+
+    .Links a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .Links a:hover {
+      color: #E8F041;
+    }
+
+    /* =========================
+       Page Title
+    ========================= */
+    h1 {
+      text-align: center;
+      color: #1F4E79;
+      margin: 40px 0;
+      font-weight: normal;
+    }
+
+    /* =========================
+       Products Section
+    ========================= */
+    .products {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Make full card clickable */
+    .product-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    figure {
+      display: flex;
+      gap: 25px;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.3s ease;
+      align-items: center;
+    }
+
+    .product-link:hover figure {
+      transform: translateY(-6px);
+    }
+
+    figure img {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    figcaption {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #6A5ACD;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    /* =========================
+       Footer (REFERENCE)
+    ========================= */
+    footer {
+      text-align: center;
+      background-color: rgba(209, 139, 90, 0.95);
+      padding: 12px 0;
+      margin-top: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0D0D0D;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="Links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Title -->
+  <h1>More A4 Notebooks</h1>
+
+  <!-- Products -->
+  <section class="products">
+
+    <a href="Buynow.html" class="product-link">
+      <figure>
+        <img src="Images/Notebook1.jpg" alt="A4 Notebook">
+        <figcaption>
+          <div class="price">₹50 (one piece)</div>
+          Our A4 Notebook is designed for extensive note-taking and project work,
+          offering premium quality paper and a durable cover.
+        </figcaption>
+      </figure>
+    </a>
+
+    <a href="Buynow.html" class="product-link">
+      <figure>
+        <img src="Images/Notebook2.jpg" alt="A4 Notebook">
+        <figcaption>
+          <div class="price">₹50 (one piece)</div>
+          Ideal for students and professionals, this notebook provides ample space
+          for notes, diagrams, and ideas.
+        </figcaption>
+      </figure>
+    </a>
+
+    <a href="Buynow.html" class="product-link">
+      <figure>
+        <img src="Images/Notebook3.jpg" alt="A4 Notebook">
+        <figcaption>
+          <div class="price">₹50 (one piece)</div>
+          Lightweight, portable, and perfectly bound — suitable for everyday academic
+          and office use.
+        </figcaption>
+      </figure>
+    </a>
+
+    <a href="Buynow.html" class="product-link">
+      <figure>
+        <img src="Images/Notebook4.jpg" alt="A4 Notebook">
+        <figcaption>
+          <div class="price">₹50 (one piece)</div>
+          A reliable notebook with smooth pages and a strong cover, built for long-term usage.
+        </figcaption>
+      </figure>
+    </a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Notebooks Store
+  </footer>
+
+</body>
+</html>

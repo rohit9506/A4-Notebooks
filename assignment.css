@@ -1,0 +1,240 @@
+/* ==================================================
+   Global Settings
+================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("C:/Users/rohit/OneDrive/Documents/WD codes/Mini Project/Images used/bg image.png")
+              no-repeat center / cover;
+}
+
+/* ==================================================
+   Navigation Bar
+================================================== */
+.Links {
+  text-align: center;
+  background-color: #D18B5A;
+  padding: 14px 0;
+}
+
+.Links a {
+  margin: 0 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.Links a:hover {
+  color: #E8F041;
+}
+
+/* ==================================================
+   Header & Titles
+================================================== */
+.header {
+  text-align: center;
+  margin: 30px 0 15px;
+}
+
+.color {
+  color: #1F4E79;
+  font-size: 36px;
+  letter-spacing: 1px;
+}
+
+.basic {
+  text-align: center;
+  color: #6A5ACD;
+  margin-top: 10px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.subheading {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.head1 {
+  color: #0D0D0D;
+  font-size: 16px;
+}
+
+/* ==================================================
+   Notebook Section
+================================================== */
+.notebook-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.notebook-card {
+  background-color: #fff;
+  padding: 14px;
+  border-radius: 15px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notebook-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Hover Effect */
+.notebook-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ==================================================
+   Button Section
+================================================== */
+.button-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.button-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 50px;
+  background: linear-gradient(135deg, #9acd32, #6b8e23);
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.button-container a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ==================================================
+   Divider Line
+================================================== */
+.line {
+  width: 85%;
+  height: 1px;
+  border: none;
+  background-color: #000;
+  margin: 25px auto;
+}
+
+/* ==================================================
+   Features Section
+================================================== */
+.product {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.product ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.product li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* ==================================================
+   Footer
+================================================== */
+footer {
+  text-align: center;
+  background-color: #D18B5A;
+  padding: 12px 0;
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   Center image & text in notebook cards
+========================= */
+.notebook-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* horizontal center */
+  justify-content: center;  /* vertical center */
+  text-align: center;
+}
+
+/* Image center fix */
+.notebook-card img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Text under image */
+.notebook-card p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #0D0D0D;
+}
+
+/* =========================
+   Page Background Image
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+
+  /* Apply the generated background image */
+  background-image: url("Images/background imag.png"); /* <-- update path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Header & Footer clean look */
+.Links,
+footer {
+  background-color: rgba(209, 139, 90, 0.95); /* soft brown */
+  backdrop-filter: blur(2px);
+}
+/* Content containers */
+.product-card,
+.about-container,
+figure,
+.notebook-card {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+/* Make entire notebook card clickable */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy Now</title>
+
+  <style>
+    /* =========================
+       Global
+    ========================= */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("C:/Users/rohit/OneDrive/Documents/WD codes/Mini Project/Images used/bg image.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* =========================
+       Navigation (MATCHED WITH HOME)
+    ========================= */
+    .Links {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 14px 0;
+    }
+
+    .Links a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .Links a:hover {
+      color: #E8F041;
+    }
+
+    /* =========================
+       Heading
+    ========================= */
+    .head1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .color {
+      color: #1F4E79;
+    }
+
+    /* =========================
+       Product Card
+    ========================= */
+    .product-card {
+      max-width: 420px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 35px 30px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* =========================
+       Image Box with Hover Details
+    ========================= */
+    .image-box {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 25px;
+      border-radius: 18px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .hover-details {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.25)
+      );
+      color: #ffffff;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.35s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.08);
+    }
+
+    .image-box:hover .hover-details {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       Text
+    ========================= */
+    .title {
+      font-size: 28px;
+      color: #1F4E79;
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #6A5ACD;
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       Button
+    ========================= */
+    .But1 {
+      display: inline-block;
+      padding: 12px 42px;
+      background: linear-gradient(135deg, #9acd32, #6b8e23);
+      color: black;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .But1:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+    }
+
+    /* =========================
+       Footer (MATCHED WITH HOME)
+    ========================= */
+    footer {
+      text-align: center;
+      background-color: #D18B5A;
+      padding: 12px 0;
+      margin-top: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0D0D0D;
+    }
+	/* =========================
+   Page Background Image
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+
+  /* Apply the generated background image */
+  background-image: url("Images/background imag.png"); /* <-- update path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Header & Footer clean look */
+.Links,
+footer {
+  background-color: rgba(209, 139, 90, 0.95); /* soft brown */
+  backdrop-filter: blur(2px);
+}
+/* Content containers */
+.product-card,
+.about-container,
+figure,
+.notebook-card {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div class="Links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <!-- Product Card -->
+  <div class="product-card">
+
+    <div class="image-box">
+      <img src="Images/3book.jpg" alt="A4 Notebook">
+
+      <div class="hover-details">
+        High-quality A4 notebook with smooth pages, durable binding,
+        and elegant design suitable for students and professionals.
+      </div>
+    </div>
+
+    <div class="title">A4 Notebook</div>
+    <div class="price">₹50</div>
+
+    <a href="Buynow.html">
+      <button class="But1">Buy Now</button>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Notebooks Store
+  </footer>
+
+</body>
+</html>
